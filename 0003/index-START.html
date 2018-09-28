@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS Guess The Animal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+  <div class="keys">
+    <div data-key="65" class="key">
+      <kbd>A</kbd>
+      <span class="sound">Which</span>
+    </div>
+    <div data-key="83" class="key">
+      <kbd>S</kbd>
+      <span class="sound">animal</span>
+    </div>
+    <div data-key="68" class="key">
+      <kbd>D</kbd>
+      <span class="sound">is</span>
+    </div>
+    <div data-key="70" class="key">
+      <kbd>F</kbd>
+      <span class="sound">it</span>
+    </div>
+    <div data-key="71" class="key">
+      <kbd>G</kbd>
+      <span class="sound">...</span>
+    </div>
+    <div data-key="72" class="key">
+      <kbd>H</kbd>
+      <span class="sound">guess</span>
+    </div>
+    <div data-key="74" class="key">
+      <kbd>J</kbd>
+      <span class="sound">when</span>
+    </div>
+    <div data-key="75" class="key">
+      <kbd>K</kbd>
+      <span class="sound">you</span>
+    </div>
+    <div data-key="76" class="key">
+      <kbd>L</kbd>
+      <span class="sound">press</span>
+    </div>
+  </div>
+
+  <audio data-key="65" src="sounds/cat.wav"></audio>
+  <audio data-key="83" src="sounds/cow.wav"></audio>
+  <audio data-key="68" src="sounds/elephant.wav"></audio>
+  <audio data-key="70" src="sounds/pig.wav"></audio>
+  <audio data-key="71" src="sounds/dog.wav"></audio>
+  <audio data-key="72" src="sounds/frog.wav"></audio>
+  <audio data-key="74" src="sounds/chicken.wav"></audio>
+  <audio data-key="75" src="sounds/donkey.wav"></audio>
+  <audio data-key="76" src="sounds/lion.wav"></audio>
+
+<script>
+
+document.addEventListener('keydown', function(e){
+    const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+    const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+    if (!audio)
+      return;
+    audio.currentTime = 0;
+    audio.play();
+    key.classList.add('playing');
+});
+
+var keys = document.querySelectorAll('.key');
+  keys.forEach(function(key) {
+    key.addEventListener('transitionend', revertStyle);
+});
+
+function revertStyle(event) {
+  if (event.propertyName === 'transform') {
+    this.classList.remove('playing');
+  }
+}
+
+</script>
+
+
+</body>
+</html>

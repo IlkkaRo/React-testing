@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="utf-8">
+  <title>Laskuri</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    main {
+      text-align: center;
+    }
+
+    #laskuri {
+      width: 300px;
+      height: 300px;
+      background-color: black;
+      color: white;
+      margin: 50px auto;
+      font-size: 200px;
+      padding: 30px 0px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div id=laskuri>0</div>
+    <button type="button" id='nolnol'>Reset</button>
+
+    <script>
+      var laskuri = document.getElementById('laskuri');
+      //var nollaa = document.getElementById('nollaa');
+      var arvo = parseInt(laskuri.innerHTML);
+
+      function kasvata() {
+        arvo++;
+        console.log(arvo);
+        laskuri.innerHTML = arvo;
+        // kasvata laskurin arvoa ja päivitä se sivulle
+
+        asetaTaustaVari()
+      }
+
+      function asetaTaustaVari() {
+        if (arvo %2 == 0) {document.getElementById('laskuri').style.background = "blue"} //lasuri.style.backgroundColor = "blue"
+        else
+        {document.getElementById('laskuri').style.background = "red" }
+        // aseta taustaväri laskurin arvon perusteella:
+        // parillinen: sininen, pariton: punainen
+
+      }
+
+      function nollaa() {
+        location.reload();
+      }
+        //eri reset, olisi vaan antaa laskuri arvo taas 0 ja tausta musta
+      function colorMe() {
+        document.getElementById('laskuri').style.opacity = "0.6";
+        document.getElementById('laskuri').style.border = "9px dotted white"
+      }
+      function colorNot() {
+        document.getElementById('laskuri').style.opacity = "1";
+        document.getElementById('laskuri').style.border = "0"
+      }
+      //laskuri.onmouseup = function(){laskuri.style.opacity = 0.7;}
+
+      laskuri.onclick = kasvata;
+      laskuri.onmousedown = colorMe;
+      laskuri.onmouseup = colorNot;
+      nolnol.onclick = nollaa;
+
+    </script>
+
+    </main>
+  </body>
+  </html>
