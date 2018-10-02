@@ -5,10 +5,12 @@
     color: yellow;
     margin: 50px auto;
     font-size: 200px;
-    /* padding: 30px 0px; */
+    padding: 30px 0px;
     border-radius: 50%;
     cursor: pointer;
     text-align: center;
+    user-select: none;
+    nav-down:
     }
 
   .bg-even{
