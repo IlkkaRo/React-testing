@@ -1,0 +1,13 @@
+body {
+  user-select: none;
+}
+
+.button-container {
+  max-width: 1000px;
+  margin: 100px auto;
+  display: flex;
+  justify-content: center;
+  border: red solid 5px;
+  padding: 20px 0px;
+  border-radius: 50px;
+}
