@@ -12,5 +12,15 @@
 }
 
 .active {
+  /* width: 200px;
+  height: 200px;
+  float: left;
+  font-size: 125px;
+  margin: 15px 15px;
+  padding: 10px 0px;
+  text-align: center;
+  border-radius: 50%;
+  cursor: pointer;
+  border: solid black 3px; */
   background-color: red;
 }
