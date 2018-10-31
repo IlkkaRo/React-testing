@@ -26,12 +26,13 @@ delay = 1000;
       this.gameover();
       return;
     }
-    this.setState({
-      buttonList: this.state.buttonList.slice(1),
-      clicks: this.state.clicks + 1
-    });
-  }
-
+    this.setState( prevState => {
+      return {
+      buttonList: prevState.buttonList.slice(1),
+      clicks: prevState.clicks + 1
+    };
+  });
+}
   gameover = () => {
     clearTimeout(this.timerId);
     this.setState({

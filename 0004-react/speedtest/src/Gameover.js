@@ -3,16 +3,17 @@ import './Gameover.css';
 
 class Gameover extends Component {
   render() {
-    if (0 < 20) {
+    const score = this.props.scoreCallback();
+    if (score < 20) {
     return(
       <div id="overlay">
-        <div id="gameover">{ this.props.scoreCallback() }</div>
+        <div id="gameover">{score}</div>
       </div>
     );
   } else {
     return(
       <div id="overlay">
-        <div id="gameover2">{ this.props.scoreCallback() }</div>
+        <div id="gameover2">{score}</div>
       </div>
     );
   }
