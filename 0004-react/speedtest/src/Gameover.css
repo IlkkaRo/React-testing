@@ -9,6 +9,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 5px 10px 15px black;
   /* visibility: hidden; */
 }
 
@@ -19,12 +20,15 @@
   background-position: center;
   display: flex;
   justify-content: center;
+  text-align: center;
   align-items: center;
   font-size: 82px;
   color: maroon;
+  text-shadow: 4px 4px 8px black;
   border-radius: 50px;
   background-image : url('https://media1.tenor.com/images/038259989da7a0a0e520458de6d97fd3/tenor.gif?itemid=9848321');
   background-size : cover;
+  box-shadow: 8px 15px 20px black;
 }
 
 #gameover2 {
@@ -34,10 +38,13 @@
   background-position: center;
   display: flex;
   justify-content: center;
+  text-align: center;
   align-items: center;
   font-size: 82px;
   color: blue;
+  text-shadow: 4px 4px 8px #4d94ff;
   border-radius: 50px;
   background-image: url('https://www.udiscovermusic.com/wp-content/uploads/2016/11/Freddie-Mercury.jpg');
   background-size: cover;
+  box-shadow: 8px 15px 20px black;
 }

@@ -13,7 +13,8 @@ class App extends Component {
     activeButton: 0,
     buttonList: [],
     clicks : 0,
-    showGameover: false
+    showGameover: false,
+    showStartgame: true
   }
 
 timerId = undefined;
@@ -64,8 +65,11 @@ delay = 1000;
     this.timerId = setTimeout( this.next, this.delay);
   }
 
-  componentDidMount() {
+  startCallback = () => {
     this.next();
+    this.setState({
+      showStartgame: false,
+    })
   }
 
   scoreCallback = () => {
@@ -83,6 +87,7 @@ delay = 1000;
           <Button buttonColor='darkorange' active={ this.state.activeButton === 4 } clickHandler={ () => { this.clicKity(4); }}/>
           { this.state.showGameover && <Gameover scoreCallback={ this.scoreCallback } /> }
         </main>
+        { this.state.showStartgame && <button id="startgame" onClick={ this.startCallback }>Start Game</button>}
       </div>
     );
   }

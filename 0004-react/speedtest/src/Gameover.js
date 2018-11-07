@@ -7,13 +7,13 @@ class Gameover extends Component {
     if (score < 20) {
     return(
       <div id="overlay">
-        <div id="gameover">{score}</div>
+        <div id="gameover">Your score: <br/>{score}</div>
       </div>
     );
   } else {
     return(
       <div id="overlay">
-        <div id="gameover2">{score}</div>
+        <div id="gameover2">Pro skills: <br/>{score}</div>
       </div>
     );
   }
